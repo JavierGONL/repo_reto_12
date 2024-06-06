@@ -1,11 +1,11 @@
 ## Reto 12
 1. Consulte que hacen los siguientes métodos de strings en python: endswith, startswith, isalpha, isalnum, isdigit, isspace, istitle, islower, isupper.
 - "endswith(suffix, start=0, end=len(string))": Determina si una cadena de texto termina con una subcadena específica
-  ```python
+```python
   cadena = "Hola, mundo!"
   print(cadena.endswith("mundo!"))  # True
   print(cadena.endswith("Hola"))  # False
-  ```
+```
 
 - "startswith(prefix, start=0, end=len(string))": Determina si una cadena de texto comienza con una subcadena específica.
 ```python
