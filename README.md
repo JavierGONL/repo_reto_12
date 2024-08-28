@@ -95,7 +95,7 @@ def top_50_palabras(texto):
 if __name__ == "__main__":
     archivo = open('archivo_texto.txt', "r")
     texto = archivo.read()
-    contador_vocal, contador_consonante = contador_vocales_consonantes(texto)
+    contador_vocal, contador_consonante = contador_vocales_consonantes(texto) #  1514665 consonantes, 2244525 vocales
     print(f"El texto tiene: \n {contador_consonante} consonantes \n {contador_vocal} vocales")
     top_50_palabras_ = top_50_palabras(texto)
     print(f"Las 50 palabras mas repetidas son: {top_50_palabras_}")
