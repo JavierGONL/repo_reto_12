@@ -67,7 +67,7 @@ print(cadena.isupper())  # False
  - Listado de las 50 palabras que más se repiten
 ```python
 def contador_vocales_consonantes(texto: str) -> int:
-    texto.lower()
+    texto.lower().strip() # strip por defecto intenta quitar espacios vacios
     contador_vocales = 0
     contador_consonantes = 0
     consonantes = [98,99,100,102,103,104,106,107,108,109,110,112,113,114,115,116,118,119,120,121,122]
@@ -81,7 +81,7 @@ def contador_vocales_consonantes(texto: str) -> int:
 
 # volver a hacer
 def top_50_palabras(texto):
-    palabras = texto.split()
+    palabras = texto.split() # split por defecto intenta quitar espacios vacios
     contador_palabras = {}
     for palabra in palabras:
         if palabra in contador_palabras:
