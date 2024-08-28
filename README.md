@@ -66,20 +66,20 @@ print(cadena.isupper())  # False
  - Cantidad de consonantes
  - Listado de las 50 palabras que más se repiten
 ```python
-def contador_vocales(texto: str) -> int:
-  contador_vocales = 0
-  vocales = {97,101,105,111,117}
-  for letra in texto:
-    if ord(letra.lower()) in vocales:
-      contador_vocales += 1
-  return contador_vocales
-def contador_consonantes(texto: str) -> int:
-  contador_consonantes = 0
-  consonantes = (98,99,100,102,103,104,106,107,108,109,110,112,113,114,115,116,118,119,120,121,122)
-  for letra in texto:
-    if ord(letra.lower()) in consonantes:
-      contador_consonantes += 1
-  return contador_consonantes
+def contador_vocales_consonantes(texto: str) -> int:
+    texto.lower()
+    contador_vocales = 0
+    contador_consonantes = 0
+    consonantes = [98,99,100,102,103,104,106,107,108,109,110,112,113,114,115,116,118,119,120,121,122]
+    vocales = [97,101,105,111,117]
+    for letra in texto:
+        if ord(letra) in vocales:
+            contador_vocales += 1
+        if ord(letra) in consonantes:
+            contador_consonantes += 1    
+    return contador_vocales,contador_consonantes
+
+# volver a hacer
 def top_50_palabras(texto):
     palabras = texto.split()
     contador_palabras = {}
@@ -91,11 +91,11 @@ def top_50_palabras(texto):
     contador_palabras = dict(sorted(contador_palabras.items(), key=lambda item: item[1], reverse=True))
     contador_palabras = dict(list(contador_palabras.items())[:50])
     return contador_palabras
+
 if __name__ == "__main__":
     archivo = open('archivo_texto.txt', "r")
     texto = archivo.read()
-    contador_consonante = contador_consonantes(texto)
-    contador_vocal = contador_vocales(texto)
+    contador_vocal, contador_consonante = contador_vocales_consonantes(texto)
     print(f"El texto tiene: \n {contador_consonante} consonantes \n {contador_vocal} vocales")
     top_50_palabras_ = top_50_palabras(texto)
     print(f"Las 50 palabras mas repetidas son: {top_50_palabras_}")
