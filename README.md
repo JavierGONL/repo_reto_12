@@ -82,7 +82,7 @@ def contador_consonantes(texto: str) -> int:
   return contador_consonantes
 def top_50_palabras(texto):
     palabras = texto.split()
-    contador_palabras = []
+    contador_palabras = {}
     for palabra in palabras:
         if palabra in contador_palabras:
             contador_palabras[palabra] += 1
